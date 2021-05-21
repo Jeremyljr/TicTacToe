@@ -36,6 +36,8 @@ function startGame() {
     })
     hoverState()
     winningMessageElement.classList.remove('show')
+    // svgContainer.classList.remove('hide')
+    // svgContainer.classList.add('hide')
 }
 
 
@@ -60,6 +62,9 @@ function handleClick(e) {
 function endgame(draw) {
     if (draw){
         winningMessage.innerText = "Draw!"
+        //lottiefile animation
+        svgContainer.classList.add('hide')
+        svgContainer2.classList.remove('hide')
     } else{
         winningMessage.innerText = `${ circleTurn ? "O's" : "X's"} Wins!`
     }
@@ -98,3 +103,23 @@ function checkWin(currentClass) {
         })
     })
 }
+
+// Animations
+const svgContainer = document.getElementById('svg')
+const svgContainer2 = document.getElementById('svg2')
+const animItem = bodymovin.loadAnimation({
+    wrapper: svgContainer,
+    animType: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://assets9.lottiefiles.com/packages/lf20_bxfumrr3.json'
+})
+
+const animItemDraw = bodymovin.loadAnimation({
+    wrapper: svgContainer2,
+    animType: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://assets1.lottiefiles.com/packages/lf20_mrrytuew.json'
+})
+

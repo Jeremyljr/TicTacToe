@@ -2,8 +2,13 @@
     box-sizing: border-box; 
 }
 
+
 body {
     margin: 0; 
+    background-image: url("src/1624.jpg");
+    background-size: 2400px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 :root {
@@ -12,6 +17,12 @@ body {
     --primaryColor: black; 
     --supportColor: white;
 }
+
+/* .container{
+    background-color: white;
+    max-width: 80%;
+    max-height: 80%;
+} */
 
 .board {
     width: 100vw;
@@ -22,6 +33,24 @@ body {
     grid-template-columns: repeat(3, auto);
     justify-items: center;
     align-items: center;
+}
+
+.board::before{
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 255, 255, 0.85);
+    width: 400px;
+    height: 400px;
+    /* left: 40%; */
+    border-radius: 25px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
 }
 
 .cell {
@@ -67,7 +96,7 @@ body {
 
 .board.x .cell:not(.x):not(.circle):hover::before, 
 .board.x .cell:not(.x):not(.circle):hover::after {
-    background-color: lightgrey;
+    background-color: rgb(0, 0, 0, 0.5);
 }
 
 .cell.x::before,
@@ -121,7 +150,7 @@ body {
     width: calc(var(--markSize) * .7);
     height: calc(var(--markSize) * .7);
     border-radius: 50%;
-    background-color: var(--supportColor);
+    background-color: rgb(255, 255, 255, 0.85);
 }
 
 /* Winning message */
@@ -158,4 +187,30 @@ button:hover{
 
 .winningMessage.show{
     display: flex;
+}
+
+/* animations */
+
+.animation{
+    position: relative;
+}
+
+.svg{
+    width: 200px;
+    position: absolute;
+    top: -240px;
+    left: -100px;
+    pointer-events: none;
+}
+
+.svg2{
+    width: 200px;
+    position: absolute;
+    top: -240px;
+    left: -100px;
+    pointer-events: none;
+}
+
+.hide {
+    display: none;
 }
