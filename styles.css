@@ -123,3 +123,39 @@ body {
     border-radius: 50%;
     background-color: var(--supportColor);
 }
+
+/* Winning message */
+
+.winningMessage{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--supportColor);
+    font-size: 5rem;
+}
+
+button {
+    font-size: 3rem;
+    background-color: var(--supportColor);
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+button:hover{
+    background-color: var(--primaryColor);
+    color: var(--supportColor);
+    border-color: var(--supportColor);
+    transition: 0.15s ease-in;
+}
+
+.winningMessage.show{
+    display: flex;
+}
