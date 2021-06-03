@@ -1,11 +1,14 @@
 *, *::after, *::before {
     box-sizing: border-box; 
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
 }
 
 
 body {
     margin: 0; 
-    background-image: url("src/1624.jpg");
+    /* background-image: url("src/1624.jpg"); */
+    background-color: #1D2235;
     background-size: 2400px;
     background-repeat: no-repeat;
     background-position: center;
@@ -14,7 +17,9 @@ body {
 :root {
     --cellSize: 100px;
     --markSize: calc(var(--cellSize) * 0.9);
-    --primaryColor: black; 
+    --backgroundColor: #1D2235;
+    --hoverColor: #696969;
+    --primaryColor: #FF5C00; 
     --supportColor: white;
 }
 
@@ -38,7 +43,7 @@ body {
 .board::before{
     content: "";
     position: absolute;
-    background-color: rgb(255, 255, 255, 0.85);
+    /* background-color: rgb(255, 255, 255, 0.85); */
     width: 400px;
     height: 400px;
     /* left: 40%; */
@@ -91,12 +96,12 @@ body {
 
 .cell.x::before,
 .cell.x::after {
-    background-color: black;
+    background-color: var(--supportColor);
 }
 
 .board.x .cell:not(.x):not(.circle):hover::before, 
 .board.x .cell:not(.x):not(.circle):hover::after {
-    background-color: rgb(0, 0, 0, 0.5);
+    background-color: var(--hoverColor);
 }
 
 .cell.x::before,
@@ -122,12 +127,12 @@ body {
 /*CIRLCE*/
 
 .cell.circle::before {
-    background-color: black;
+    background-color: var(--supportColor);
 }
 
 .board.circle .cell:not(.x):not(.circle):hover::before, 
 .board.circle .cell:not(.x):not(.circle):hover::after {
-    background-color: lightgrey;
+    background-color: var(--hoverColor);
 }
 
 .cell.circle::before, 
@@ -150,7 +155,7 @@ body {
     width: calc(var(--markSize) * .7);
     height: calc(var(--markSize) * .7);
     border-radius: 50%;
-    background-color: rgb(255, 255, 255, 0.85);
+    background-color: var(--backgroundColor);
 }
 
 /* Winning message */
@@ -162,7 +167,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.8);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -172,15 +177,16 @@ body {
 
 button {
     font-size: 3rem;
-    background-color: var(--supportColor);
+    background-color: var(--primaryColor);
+    color: var(--supportColor);
     padding: 0.25em 0.5em;
     cursor: pointer;
     border-radius: 25px;
 }
 
 button:hover{
-    background-color: var(--primaryColor);
-    color: var(--supportColor);
+    background-color: var(--supportColor);
+    color: black;
     border-color: var(--supportColor);
     transition: 0.15s ease-in;
 }
@@ -213,4 +219,24 @@ button:hover{
 
 .hide {
     display: none;
+}
+
+.title{
+    color: var(--supportColor);
+    position: absolute;
+
+    width: 100vw;
+    height: 30vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-size: 70px;
+}
+
+.title::after{
+    content: "";
+    width: 150px;
+    height: 3px;
+    margin-left: 90px;
+    background-color: var(--primaryColor);
 }
