@@ -4,11 +4,15 @@ This is a simple Tic Tac Toe game that uses vanilla HTML, CSS, and JavaScript. T
 
 ## Demo
 
-![](src/hover.gif)
+![hover gif](src/hover.gif)
 
 The game starts off with X's turn and whoevers turn it is, the hover state will show
 
+![winner gif](src/winner.gif)
+
 If there is a winner, a pop up screen will show either X's wins, or O's wins
+
+![draw gif](src/draw.gif)
 
 If there is a draw, the pop up will show a draw
 
